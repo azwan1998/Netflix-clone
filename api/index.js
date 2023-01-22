@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/users");
 const { json } = require("express");
 
 dotenv.config();
@@ -17,8 +18,11 @@ mongoose.connect(process.env.MONGO_URL, {
 .catch((err) => console.log(err));
 
 app.use(json());
-
+//Login and Register
 app.use("/api/auth" , authRoute);
+
+//user
+app.use("/api/users" , userRoute);
 
 app.listen(8800, () =>{
     console.log("backend is running bro");
