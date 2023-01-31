@@ -39,9 +39,7 @@ router.delete("/:id", verify, async (req,res) => {
 //GET
 router.get("/find/:id", async (req,res) => {
     try{
-        // console.log("ddd");
         const user = await User.findById(req.params.id);
-        console.log(user);
         const {password, ...info} = user._doc;
         res.status(200).json(info);
     }catch (err){
