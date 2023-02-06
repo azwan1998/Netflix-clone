@@ -15,7 +15,7 @@ function Navbar() {
         <div className="container">
             <div className="left">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="" />
-                <span>homepage</span>
+                <span>Homepage</span>
                 <span>Movies</span>
                 <span>Series</span>
                 <span>New and Popular</span>
