@@ -8,10 +8,11 @@
         left: 50px;
         font-size: 20px;
         font-weight: 500;
+        z-index: 100;
         color: white;
         display: flex;
         align-items: center;
-
+        
         select {
             cursor: pointer;
             background-color: black;
