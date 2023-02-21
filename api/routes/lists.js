@@ -17,6 +17,20 @@ if(req.user.isAdmin){
 }
 });
 
+//DELETE
+router.delete("/:id", verify, async (req,res) => {
+    if(req.user.isAdmin){
+        try{
+            await List.findByIdAndDelete(req.params.id);
+            res.status(201).json("the list has been deleted");
+        }catch(err){
+            res.status(500).json(err);
+        }
+    } else{
+        res.status(403).json("you are not allowed");
+    }
+    });
+
 //GET
 router.get("/", async (req,res) => {
     const typeQuery = req.query.type;
